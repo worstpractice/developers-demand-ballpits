@@ -14,7 +14,7 @@ So the viewing experience is almost certainly best if you just clone the repo an
 
 Wherever you find the code, in fact. I decided to socratically sprinkle the discussion across the various parts of the source code.
 
-I'm a huge fan of the conversational writing style of esteemed programming communicators like [Amos](https://fasterthanli.me/series/reading-files-the-hard-way/part-1) and [Eli Bendersky](https://eli.thegreenplace.net/2018/launching-linux-threads-and-processes-with-clone/) (to name just two).
+I'm a huge fan of the conversational writing style of esteemed programming communicators like [Gary Bernhardt](https://www.destroyallsoftware.com/screencasts), [Amos](https://fasterthanli.me/series/reading-files-the-hard-way/part-1) and [Eli Bendersky](https://eli.thegreenplace.net/2018/launching-linux-threads-and-processes-with-clone/) (to name just a few).
 
 I will clarify however that normal code should never be documented like this. It isn't really documentation, per se.
 
