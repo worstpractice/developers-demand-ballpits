@@ -11,7 +11,7 @@ import { parseTimings } from './parseTimings';
  *
  * I humbly ask for this benchmarking function not to be treated as part of the exercise (and it really lies outside the scope of the task anyways).
  *
- * The reason I wish to include (despite it being pasta) is that it would've made me happy to recieve if I was a technical reviewer.
+ * The reason I wish to include (despite it being pasta) is that it would've made me happy to receive if I was a technical reviewer.
  *
  * Not because it's part of the challenge (it isn't), but because I'm an incurably curious skeptic.
  *
