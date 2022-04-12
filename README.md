@@ -24,7 +24,7 @@ On the contrary, the exercise fills a purpose all its own — as does the text.
 
 ## Speaking of which, where is the part on testing?
 
-In a nutshell, if I was stranded on a desert island and could only pick one way to test a project like this (imagining the bigger API that this challenge references in its description), I would probably pick E2E testing and then begin arranging coconuts on the beach to spell out H-E-L-P in huge letters.
+In a nutshell, if I was stranded on a desert island and could only pick one way to test a project like this (imagining the bigger API that this challenge references in its description), I'd probably pick E2E testing and then begin arranging coconuts on the beach to spell out H-E-L-P in huge letters.
 
 If we test E2E and every aspect of the product is reachable from the tests (which should map as closely as possible to the perspective of the users) and every feature simply works, then that pretty much has to mean the operative parts of the backend, frontend, integration, network (etc) work. That's a pretty airtight definition of "works".
 
