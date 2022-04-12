@@ -32,7 +32,7 @@ On a smaller scale, for code of the kind written here though, I'd probably say p
 
 ## Great stuff, and the rest?
 
-You will find it in the various files, hopefully as part of a discussion that makes sense. I suspect quite a few places may seem to contain non-sequitours, but that is a risk I am willing to accept in trying to adopt a conversational style.
+You'll find it in the various files, hopefully as part of a discussion that makes sense. I suspect quite a few places may seem to contain non-sequitours, but that is a risk I am willing to accept in trying to adopt a conversational style.
 
 My hope is that my words will inspire curiosity in you about the code and how it all fits together, your brain not knowing quite what to expect, which should hopefully help to promote wakefulness, at the very least.
 
