@@ -46,15 +46,27 @@ The deadline for the top100 function was being able to return a correct answer a
 
 I ran it once for every request that trickled in, just to make things as hard as possible.
 
-I also made each IP send multiple requests, 10 in the run pictured below:
+I also made each IP send multiple requests, 10 in the benchmarks discussed below.
 
 ![benchmark results](./benchmark.png)
 
-As my results show, on my aging rig, the top100 function took 20 microseconds (mean) and 6 microseconds (median) accross 220 million requests from 20 million ips.
+~~`requestHandled` took 70 microseconds (mean) and a whopping 200 microseconds (median) to run.~~
 
-requestHandled, meanwhile, did a bit worse, taking all of 70 microseconds (mean) and 200 microseconds (median) to complete.
+~~`top100` did better, taking 20 microseconds (mean) and 6 microseconds (median) to run.~~
 
-The good news are, even 200 microseconds is well within the range of 300 milliseconds.
+~~The good news are, even 200 microseconds is well within the range of 300 milliseconds.~~
+
+Thanks to your steely wise and eagle-eyed engineering department, an unexploited branch in the code was identified, in which sorting the top 100 list proved unnecessary.
+
+This especially matters since this particular branch is very hot — in other words, it ends up being taken incredibly often.
+
+With this discovery pumped dry for all its performance savings, the new numbers are as follows:
+
+![benchmark results](./improved_benchmark.png)
+
+`requestHandled` sped up by 700% (mean) and ~350% (median).
+
+`top100` sped up by 200% (mean) and 20% (median).
 
 ## Is the code that runs intended as part of your submission?
 
