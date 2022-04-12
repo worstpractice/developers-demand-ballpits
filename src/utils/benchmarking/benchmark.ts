@@ -3,6 +3,7 @@ import type { RequestCounter } from '../../lib/RequestCounter';
 import type { IpV4Address } from '../../typings/IpV4Address';
 import { randomIpv4Address } from '../randomization/randomIpv4Address';
 import { parseTimings } from './parseTimings';
+import { sortIps } from './sortIps';
 
 /**
  * 🌈 DISCLAIMER: 🌈
@@ -74,10 +75,14 @@ export const benchmark = (ipAdresses: number, requestsPerIp: number): void => {
 
   /** Again, we log this list here to prevent the JIT from optimizing away our calls to {@link top100}. */
   console.log(
-    toplist.map(({ count, ip }) => ({
-      requests: count,
-      ip,
-    })),
+    [...toplist]
+      .sort((a, b): -1 | 0 | 1 => {
+        return a.count < b.count ? 1 : b.count < a.count ? -1 : sortIps(a, b);
+      })
+      .map(({ count, ip }) => ({
+        requests: count,
+        ip,
+      })),
   );
 
   {
