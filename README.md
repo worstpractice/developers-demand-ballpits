@@ -26,7 +26,7 @@ On the contrary, the exercise fills a purpose all its own — as does the text.
 
 In a nutshell, if I was stranded on a desert island and could only pick one way to test a project like this (imagining the bigger API that this challenge references in its description), I would probably pick E2E testing and then begin arranging coconuts on the beach to spell out H-E-L-P in huge letters.
 
-If we test E2E and every aspect of the product reachable from it (the perspective of the users) simply work, that pretty much has to mean the operative parts of the backend, frontend, integration, design, and network (among others) works. That is a pretty airtight definition of "works".
+If we test E2E and every aspect of the is product reachable from it (the perspective of the users) simply work, that pretty much has to mean the operative parts of the backend, frontend, integration, design, and network (among others) works. That is a pretty airtight definition of "works".
 
 On a smaller scale, for code of the kind written here though, I would probably say property-based testing. Property based testing is amazingly well adapted for code of this nature, where we have a range of inputs and we essentially want to fuzz all aspects of the implementation, and especially find minimal reproducible edge cases automatically.
 
