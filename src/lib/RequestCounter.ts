@@ -4,7 +4,8 @@ import type { IpV4Address } from '../typings/IpV4Address';
 /**
  * A simple monotonic counter.
  *
- * Deduplication of counter objects per IP happens in the {@link requestHandled} function.
+ * Deduplication of counter objects per IP happens in the {@link requestHandled} function
+ * (or, more precisely, in a module-private function called inside it).
  */
 export class RequestCounter {
   /**
