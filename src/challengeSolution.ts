@@ -18,29 +18,22 @@ const REQUESTS_BY_IP: BucketMap<IpV4Address, RequestCounter> = new BucketMap();
 const TOP_100: RequestCounter[] = [];
 
 /**
- * Due to the fiddly nature of the `isTop100` caching mechanism, I decided to open this function with an immediate return.
+ * This short-circuit `return` in the middle of this function turns out to be a HUGE performance boost.
  *
- * The first line checking the {@link BucketMap.isTop100 isTop100} flag is a significantly more performant way of expressing:
- *
- * ```
- * if (TOP_100.includes(requests)) return;
- * ```
- *
- * One clear benefit of unconditionally calling this function, only to immediately return in the vast majority of cases,
- * is that we keep essentially all of the fiddly flag code in a single location.
+ * It constitutes the branch most taken (by far).
  */
-const considerForTop100 = (requests: RequestCounter): void => {
-  if (requests.isTop100) return;
-
+const didQualifyForTop100 = (requests: RequestCounter): boolean => {
   const lastIndex = TOP_100.length - 1;
   const lastEntry = TOP_100[lastIndex];
 
-  if (requests.count > lastEntry.count) {
-    TOP_100[lastIndex] = requests;
+  if (requests.count <= lastEntry.count) return false;
 
-    requests.isTop100 = true;
-    lastEntry.isTop100 = false;
-  }
+  TOP_100[lastIndex] = requests;
+
+  requests.isTop100 = true;
+  lastEntry.isTop100 = false;
+
+  return true;
 };
 
 /**
@@ -97,16 +90,16 @@ const getRequestCount = (ip: IpV4Address): RequestCounter => {
  * capitalize on the shared ordering.
  *
  * Finally, sorting here is what allows a number of other invariants to fall into place.
- * E.g, only ever having to compare against the last entry in {@link considerForTop100}.
+ * E.g, only ever having to compare against the last entry in {@link didQualifyForTop100}.
  */
 export const requestHandled = (ip: IpV4Address): void => {
   const requests = getRequestCount(ip);
 
   requests.increment();
 
-  considerForTop100(requests);
-
-  TOP_100.sort(descendingByRequests);
+  if (requests.isTop100 || didQualifyForTop100(requests)) {
+    TOP_100.sort(descendingByRequests);
+  }
 };
 
 /**
