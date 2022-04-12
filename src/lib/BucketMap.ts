@@ -12,7 +12,7 @@ import type { clear } from '../challengeSolution';
  *
  * Note that this is not your run-of-the-mill stack overflow. There is no recursion involved here.
  *
- * It turns out that V8's {@link Map} implementation has a hard limit of 16,777,216 million keys per instance.
+ * It turns out that V8's {@link Map} implementation has a hard limit of 16,777,216 keys per instance.
  * This hard upper limit (and the resulting exception once the limit is surpassed) could very well be in the spec,
  * though my gut tells me even if so, the exact number is likely implementation-defined.
  *
