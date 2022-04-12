@@ -46,7 +46,7 @@ const considerForTop100 = (requests: RequestCounter): void => {
 /**
  * This function ties much of the implementation together behind the scenes.
  *
- * An impressive amount of separete logic that would be pretty gnarly to have spread out everywhere
+ * An considerable amount of disparate logic that would be pretty gnarly to have spread out everywhere
  * has been neatly wrapped up in a single logical place. At least, that's the intention. 😁
  *
  * In a bigger program, it would of course also make sense to ensure a critical function like this can
