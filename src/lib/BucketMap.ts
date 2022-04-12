@@ -1,5 +1,5 @@
 import type { clear } from '../challengeSolution';
- 
+
 /**
  * This class is an abstraction over {@link Map}. A higher-order map is not exactly right. Rather, it's a collection of {@link Map}s, posing as a single {@link Map}.
  *
@@ -21,7 +21,7 @@ import type { clear } from '../challengeSolution';
  *
  * The {@link BucketMap.insert insert} method represents my chosen technique for overcoming this limitation in practice.
  *
- * In summary, this (perhaps lesser known) key limit of regular {@link Map}s are what motivated the creation of a data
+ * This (perhaps lesser known) key limit of regular {@link Map}s is what motivated the creation of a data
  * structure better suited to the present (highly specific) use case.
  *
  * I should note that while I always try to solve problems in terms of data structures rather than logic, I don't
