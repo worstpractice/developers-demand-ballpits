@@ -6,6 +6,10 @@ A fun and interesting programming challenge solved in TypeScript.
 
 The meat and potatoes of this thing is located in the `challengeSolution.ts` file.
 
+Oh, and you can absolutely read this on GitHub. But the comments render quite nicely in VsCode (your milage may vary for other IDEs).
+
+So the viewing experience is almost certainly best if you just clone the repo and start poking around in it like you would in real code.
+
 ## And where can I find the discussion?
 
 Wherever you find the code, in fact. I decided to socratically sprinkle the discussion across the various parts of the source code.
